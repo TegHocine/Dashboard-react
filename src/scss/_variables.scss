@@ -1,0 +1,14 @@
+$main-color: #0d1117;
+$dark-blue: #003f5c;
+$purple: #58508d;
+$pink: #bc5090;
+$orange: #ff6361;
+$yellow: #ffa600;
+$white: #fff;
+$black: #000;
+
+@mixin flex($align-items, $justify-content) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
