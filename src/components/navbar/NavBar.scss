@@ -1,0 +1,6 @@
+@use '../../scss/index' as *;
+
+.navbar {
+  height: $nav-height;
+  background-color: $dark-blue;
+}

@@ -7,6 +7,8 @@ $yellow: #ffa600;
 $white: #fff;
 $black: #000;
 
+$nav-height: 3rem;
+
 @mixin flex($align-items, $justify-content) {
   display: flex;
   align-items: $align-items;
