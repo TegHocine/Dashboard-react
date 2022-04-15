@@ -1,0 +1,64 @@
+@use '../../scss/' as *;
+
+.widget {
+  @include flex(center, space-between);
+  padding: 0.5rem;
+  flex: 1;
+  border-radius: 10px;
+  background-color: $main-color;
+  filter: drop-shadow(0 10px 8px rgba(255, 255, 255, 0.04))
+    drop-shadow(0 4px 3px rgba(255, 255, 255, 0.1));
+
+  color: $gray;
+  &__left {
+    .title {
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .count {
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .see-all {
+      font-weight: 300;
+      font-size: 0.9rem;
+    }
+  }
+  &__right {
+    @include flex(center, space-between);
+    flex-direction: column;
+    height: 100%;
+
+    .percentage {
+      @include flex(center, center);
+    }
+    .positive {
+      color: #00a368;
+    }
+
+    .icon {
+      border-radius: 5px;
+      width: 25px;
+      height: 25px;
+      @include flex(center, center);
+      padding: 0.1rem;
+    }
+    .pink {
+      color: $pink;
+      background-color: rgb($pink, 0.2);
+    }
+    .yellow {
+      color: $yellow;
+      background-color: rgb($yellow, 0.2);
+    }
+    .blue {
+      color: $dark-blue;
+      background-color: rgb($dark-blue, 0.2);
+    }
+    .orange {
+      color: $orange;
+      background-color: rgb($orange, 0.2);
+    }
+  }
+}

@@ -1,6 +1,76 @@
-@use '../../scss/index' as *;
+@use '../../scss/' as *;
 
 .navbar {
   height: $nav-height;
-  background-color: $dark-blue;
+  border-bottom: 0.5px solid $border;
+  @include flex(center, space-between);
+  font-size: 80%;
+
+  &__search {
+    @include flex(center, none);
+    height: 2rem;
+    flex: 0.3;
+    position: relative;
+
+    .search-input {
+      background-color: $main-color;
+      color: $white;
+      outline: none;
+      border: 0.5px solid $border;
+      padding-right: 2.5rem;
+      height: 100%;
+      width: 100%;
+      text-indent: 0.5rem;
+    }
+    .search-icon {
+      position: absolute;
+      color: $white;
+      right: 0.5rem;
+    }
+  }
+
+  &__items {
+    @include flex(center, center);
+    gap: 1rem;
+
+    .item {
+      @include flex(center, center);
+      gap: 0.1rem;
+    }
+
+    .item-notif {
+      position: relative;
+    }
+    .item-msg {
+      position: relative;
+    }
+
+    .nbr-notif {
+      width: 15px;
+      height: 15px;
+      background-color: $orange;
+      border-radius: 50%;
+      color: $white;
+      @include flex(center, center);
+      font-size: 10px;
+      font-weight: bold;
+      position: absolute;
+      top: -5px;
+      right: -5px;
+    }
+
+    .item-avatar {
+      img {
+        width: 35px;
+        height: 35px;
+        border-radius: 99999px;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    .item-icon {
+      font-size: 1.3rem;
+    }
+  }
 }

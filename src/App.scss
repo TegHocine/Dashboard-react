@@ -1,7 +1,5 @@
 @use './scss/' as *;
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
 * {
   padding: 0;
   margin: 0;
@@ -10,6 +8,7 @@
 
 a {
   text-decoration: none;
+  color: $white;
 }
 
 button,
@@ -21,13 +20,17 @@ ul {
   list-style-type: none;
 }
 
-.container {
-  max-width: 1536px;
-  margin-left: auto;
-  margin-right: auto;
+.section {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 body {
   background-color: $main-color;
   color: $white;
+}
+
+.App {
+  height: 100vh;
+  width: 100%;
 }

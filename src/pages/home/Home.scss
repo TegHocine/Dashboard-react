@@ -1,0 +1,16 @@
+@use '../../scss/' as *;
+
+.home {
+  display: flex;
+
+  &__container {
+    flex: 6;
+    background-color: inherit;
+    .widget-container {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
