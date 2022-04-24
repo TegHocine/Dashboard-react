@@ -1,0 +1,40 @@
+@use '../../scss/' as *;
+
+#table {
+  background-color: $main-color;
+  border: 1px solid $border;
+  color: inherit;
+  filter: drop-shadow(0 10px 8px hwb(0 23% 20% / 0.04))
+    drop-shadow(0 4px 3px rgba(255, 255, 255, 0.1));
+  .tableCell {
+    color: inherit;
+    border-bottom: 1px solid $gray;
+
+    .cellWrapper {
+      display: flex;
+      align-items: center;
+
+      .image {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        margin-right: 10px;
+        object-fit: cover;
+      }
+    }
+
+    .status {
+      padding: 5px;
+      border-radius: 5px;
+
+      &.Approved {
+        color: $green;
+        background-color: rgba(0, 128, 0, 0.151);
+      }
+      &.Pending {
+        color: $yellow;
+        background-color: rgba(189, 189, 3, 0.103);
+      }
+    }
+  }
+}

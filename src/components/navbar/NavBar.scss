@@ -1,6 +1,7 @@
 @use '../../scss/' as *;
 
 .navbar {
+  background-color: inherit;
   height: $nav-height;
   border-bottom: 0.5px solid $border;
   @include flex(center, space-between);
@@ -13,8 +14,8 @@
     position: relative;
 
     .search-input {
-      background-color: $main-color;
-      color: $white;
+      background-color: inherit;
+      color: inherit;
       outline: none;
       border: 0.5px solid $border;
       padding-right: 2.5rem;
@@ -24,7 +25,7 @@
     }
     .search-icon {
       position: absolute;
-      color: $white;
+      color: inherit;
       right: 0.5rem;
     }
   }

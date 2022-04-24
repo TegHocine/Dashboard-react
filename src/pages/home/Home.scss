@@ -9,8 +9,18 @@
     .widget-container {
       display: flex;
       gap: 1.5rem;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .charts-container {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .table-container {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
     }
   }
 }

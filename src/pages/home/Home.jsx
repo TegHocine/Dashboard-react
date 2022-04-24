@@ -3,6 +3,9 @@ import React from 'react'
 import SideBar from '../../components/sidebar/SideBar'
 import NavBar from '../../components/navbar/NavBar'
 import Widget from '../../components/widget/Widget'
+import Chart from '../../components/chart/Chart'
+import Featured from '../../components/featured/Featured'
+import Table from '../../components/table/Table'
 
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
@@ -31,7 +34,13 @@ const Home = () => {
             <AccountBalanceWalletOutlinedIcon />
           </Widget>
         </div>
-        <div className='section'>home </div>
+        <div className='charts-container section'>
+          <Featured />
+          <Chart title={'Last 6 Months (Revenue)'} aspect={2 / 1} />
+        </div>
+        <div className='table-container section'>
+          <Table />
+        </div>
       </div>
     </div>
   )

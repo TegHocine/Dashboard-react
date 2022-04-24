@@ -1,0 +1,63 @@
+@use '../../scss/' as *;
+
+.featured {
+  flex: 2;
+  background-color: $main-color;
+  border-radius: 10px;
+  padding: 0.5rem;
+  filter: drop-shadow(0 10px 8px hwb(0 23% 20% / 0.04))
+    drop-shadow(0 4px 3px rgba(255, 255, 255, 0.1));
+
+  &__top {
+    @include flex(center, space-between);
+    .title {
+      color: $gray;
+      font-weight: 500;
+      font-size: 1.2rem;
+    }
+  }
+  &__bottom {
+    @include flex(center, center);
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.5rem;
+    color: $gray;
+
+    .chartbar {
+      width: 120px;
+      height: 120px;
+    }
+    .title {
+      font-weight: 500;
+      font-size: 1.2rem;
+    }
+    .amount {
+      font-weight: 700;
+      font-size: 2rem;
+    }
+    .desc {
+      font-weight: 300;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    .summary {
+      margin-top: 0.5rem;
+      width: 100%;
+      @include flex(center, space-between);
+      font-weight: 300;
+      text-align: center;
+      .itemResult {
+        margin-top: 0.6rem;
+        @include flex(center, unset);
+      }
+
+      .positive {
+        color: $green;
+      }
+      .negative {
+        color: $red;
+      }
+    }
+  }
+}
