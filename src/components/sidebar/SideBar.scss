@@ -24,7 +24,7 @@
 
     .title {
       font-weight: 400;
-      margin-top: 0.8rem;
+      margin-top: 1rem;
     }
 
     .links {
@@ -32,7 +32,7 @@
       width: 100%;
       @include flex(center, none);
       gap: 0.3rem;
-      margin-top: 0.2rem;
+      margin-top: 0.3rem;
       padding-left: 0.5rem;
     }
 
