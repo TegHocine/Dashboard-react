@@ -2,11 +2,11 @@
 
 .featured {
   flex: 2;
-  background-color: $main-color;
+  background-color: $white;
   border-radius: 10px;
   padding: 0.5rem;
-  filter: drop-shadow(0 10px 8px hwb(0 23% 20% / 0.04))
-    drop-shadow(0 4px 3px rgba(255, 255, 255, 0.1));
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+    drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
 
   &__top {
     @include flex(center, space-between);
@@ -36,7 +36,7 @@
       font-size: 2rem;
     }
     .desc {
-      font-weight: 300;
+      font-weight: 400;
       font-size: 0.8rem;
       text-align: center;
     }
@@ -45,11 +45,12 @@
       margin-top: 0.5rem;
       width: 100%;
       @include flex(center, space-between);
-      font-weight: 300;
+      font-weight: 400;
       text-align: center;
       .itemResult {
         margin-top: 0.6rem;
         @include flex(center, unset);
+        font-weight: 600;
       }
 
       .positive {

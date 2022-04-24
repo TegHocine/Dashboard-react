@@ -1,1 +1,10 @@
 @use '../../scss/' as *;
+
+.list {
+  display: flex;
+  background-color: inherit;
+
+  &__container {
+    flex: 6;
+  }
+}

@@ -5,9 +5,9 @@
   padding: 0.5rem;
   flex: 1;
   border-radius: 10px;
-  background-color: $main-color;
-  filter: drop-shadow(0 10px 8px rgba(255, 255, 255, 0.04))
-    drop-shadow(0 4px 3px rgba(255, 255, 255, 0.1));
+  background-color: $white;
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+    drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
 
   color: $gray;
   &__left {

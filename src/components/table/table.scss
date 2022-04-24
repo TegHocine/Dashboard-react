@@ -1,11 +1,10 @@
 @use '../../scss/' as *;
 
 #table {
-  background-color: $main-color;
   border: 1px solid $border;
   color: inherit;
-  filter: drop-shadow(0 10px 8px hwb(0 23% 20% / 0.04))
-    drop-shadow(0 4px 3px rgba(255, 255, 255, 0.1));
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+    drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
   .tableCell {
     color: inherit;
     border-bottom: 1px solid $gray;
@@ -29,11 +28,11 @@
 
       &.Approved {
         color: $green;
-        background-color: rgba(0, 128, 0, 0.151);
+        background-color: rgba($green, 0.151);
       }
       &.Pending {
         color: $yellow;
-        background-color: rgba(189, 189, 3, 0.103);
+        background-color: rgba($yellow, 0.103);
       }
     }
   }
