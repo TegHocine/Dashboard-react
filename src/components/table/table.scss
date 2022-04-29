@@ -3,8 +3,8 @@
 #table {
   border: 1px solid $border;
   color: inherit;
-  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
-    drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  box-shadow: 0 1px 3px 0 rgb($main-color, 0.1),
+    0 1px 2px -1px rgb($main-color, 0.1);
   .tableCell {
     color: inherit;
     border-bottom: 1px solid $gray;
@@ -35,5 +35,15 @@
         background-color: rgba($yellow, 0.103);
       }
     }
+  }
+}
+
+.dark {
+  #table {
+    background-color: $main-color;
+    box-shadow: 0 1px 3px 0 rgb($secondary-white, 0.1),
+      0 1px 2px -1px rgb($secondary-white, 0.1);
+    border-color: rgb($gray, 0.1);
+    color: $light-gray;
   }
 }

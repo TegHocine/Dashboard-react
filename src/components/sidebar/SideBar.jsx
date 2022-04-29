@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import DarkMode from '../darkmode/DarkMode'
+
 import DashboardIcon from '@mui/icons-material/Dashboard'
 import PersonIcon from '@mui/icons-material/Person'
 import StoreIcon from '@mui/icons-material/Store'
@@ -72,9 +74,14 @@ const SideBar = () => {
               <LogoutIcon className='icons' /> Logout
             </Link>
           </li>
+          <h3 className='title'>Theme</h3>
+          <li>
+            <div className='links'>
+              <DarkMode type={'default'} />
+            </div>
+          </li>
         </ul>
       </div>
-      <div className='sidebar__bottom'>theme</div>
     </div>
   )
 }

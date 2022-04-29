@@ -1,0 +1,49 @@
+@use '../../scss/' as *;
+
+.darkmod {
+  .type-toggle {
+    position: relative;
+    width: 40px;
+    border: 1px solid $purple;
+    border-radius: 30px;
+    height: 18px;
+    padding-block: 0.05rem;
+
+    .toggle-icon {
+      height: 100%;
+      @include flex(center, flex-start);
+
+      &.dark {
+        @include flex(center, flex-end);
+      }
+      .icon {
+        height: 100%;
+      }
+    }
+
+    &.default {
+      display: none;
+    }
+  }
+
+  .type-theme {
+    @include flex(center, center);
+    gap: 0.3rem;
+    .themes {
+      height: 25px;
+      width: 25px;
+      box-shadow: 0 1px 3px 0 rgb($main-color, 0.1),
+        0 1px 2px -1px rgb($main-color, 0.1);
+      border: 1px solid $purple;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &.light {
+        background-color: $secondary-white;
+      }
+      &.dark {
+        background-color: $main-color;
+      }
+    }
+  }
+}

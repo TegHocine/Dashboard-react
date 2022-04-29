@@ -2,16 +2,19 @@
 
 .sidebar {
   flex: 1;
+  max-width: max-content;
+  padding-inline: 1.5rem;
   background-color: inherit;
   border-right: 0.5px solid $border;
   min-height: 100vh;
-  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
-    drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  box-shadow: 0 1px 3px 0 rgb($main-color, 0.1),
+    0 1px 2px -1px rgb($main-color, 0.1);
 
   &__top {
     height: $nav-height;
     @include flex(center, center);
     border-bottom: 0.5px solid $border;
+    margin-inline: -1.5rem;
 
     .logo {
       font-size: 2rem;
@@ -20,8 +23,6 @@
     }
   }
   &__center {
-    padding-left: 1rem;
-
     .title {
       font-weight: 400;
       margin-top: 1rem;
@@ -38,6 +39,24 @@
 
     .icons {
       color: $purple;
+    }
+  }
+}
+
+.dark {
+  .sidebar {
+    box-shadow: 0 1px 3px 0 rgb($secondary-white, 0.1),
+      0 1px 2px -1px rgb($secondary-white, 0.1);
+    border-color: rgb($gray, 0.08);
+    &__top {
+      border-color: rgb($gray, 0.1);
+      .logo {
+        color: $secondary-white;
+      }
+    }
+
+    .icons {
+      color: $secondary-white;
     }
   }
 }

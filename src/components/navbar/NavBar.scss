@@ -1,5 +1,15 @@
 @use '../../scss/' as *;
 
+.dark {
+  .navbar {
+    border-color: rgb($gray, 0.1);
+    &__search {
+      .search-input {
+        border-color: rgb($gray, 0.2);
+      }
+    }
+  }
+}
 .navbar {
   background-color: inherit;
   height: $nav-height;
@@ -22,6 +32,7 @@
       height: 100%;
       width: 100%;
       text-indent: 0.5rem;
+      border-radius: 5px;
     }
     .search-icon {
       position: absolute;
@@ -49,7 +60,7 @@
     .nbr-notif {
       width: 15px;
       height: 15px;
-      background-color: $orange;
+      background-color: $red;
       border-radius: 50%;
       color: $white;
       @include flex(center, center);

@@ -27,7 +27,18 @@ ul {
 
 .App {
   height: 100vh;
-  width: 100%;
+  max-width: 100vw;
   background-color: $white;
   color: $gray;
+}
+
+.dark {
+  .App {
+    background-color: $main-color;
+    color: $white;
+  }
+
+  a {
+    color: $secondary-white;
+  }
 }

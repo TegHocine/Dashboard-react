@@ -8,9 +8,10 @@ $green: #00ba7c;
 $red: #dc143c;
 $white: #ffffffd7;
 $black: #000;
-$border: #8080800a;
+$border: #0000000a;
 $gray: #686868;
-
+$light-gray: #929292;
+$secondary-white: #c9d1d9;
 $nav-height: 3rem;
 
 @mixin flex($align-items, $justify-content) {

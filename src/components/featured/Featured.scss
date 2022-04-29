@@ -5,8 +5,8 @@
   background-color: $white;
   border-radius: 10px;
   padding: 0.5rem;
-  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
-    drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  box-shadow: 0 1px 3px 0 rgb($main-color, 0.1),
+    0 1px 2px -1px rgb($main-color, 0.1);
 
   &__top {
     @include flex(center, space-between);
@@ -42,7 +42,8 @@
     .summary {
       margin-top: 0.5rem;
       width: 100%;
-      @include flex(center, space-between);
+      @include flex(flex-end, space-between);
+      gap: 0.5rem;
       font-weight: 400;
       text-align: center;
       .itemResult {
@@ -58,5 +59,14 @@
         color: $red;
       }
     }
+  }
+}
+
+.dark {
+  .featured {
+    background-color: $main-color;
+    color: $light-gray;
+    box-shadow: 0 1px 3px 0 rgb($secondary-white, 0.1),
+      0 1px 2px -1px rgb($secondary-white, 0.1);
   }
 }

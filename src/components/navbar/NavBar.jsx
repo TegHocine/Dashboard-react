@@ -1,10 +1,11 @@
 import React from 'react'
 
+import DarkMode from '../darkmode/DarkMode'
+
 import SearchIcon from '@mui/icons-material/Search'
 import LanguageIcon from '@mui/icons-material/Language'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble'
-import DarkModeIcon from '@mui/icons-material/DarkMode'
 
 import './NavBar.scss'
 
@@ -20,7 +21,7 @@ const NavBar = () => {
           <LanguageIcon className='item-icon' /> English
         </div>
         <div className='item-theme item'>
-          <DarkModeIcon className='item-icon' />
+          <DarkMode type={'toggle'} />
         </div>
         <div className='item-notif item'>
           <NotificationsIcon className='item-icon' />

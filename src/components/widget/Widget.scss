@@ -1,13 +1,22 @@
 @use '../../scss/' as *;
 
+.dark {
+  .widget {
+    background-color: $main-color;
+    box-shadow: 0 1px 3px 0 rgb($secondary-white, 0.1),
+      0 1px 2px -1px rgb($secondary-white, 0.1);
+    color: $light-gray;
+  }
+}
+
 .widget {
   @include flex(center, space-between);
   padding: 0.5rem;
   flex: 1;
   border-radius: 10px;
   background-color: $white;
-  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
-    drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  box-shadow: 0 1px 3px 0 rgb($main-color, 0.1),
+    0 1px 2px -1px rgb($main-color, 0.1);
 
   color: $gray;
   &__left {

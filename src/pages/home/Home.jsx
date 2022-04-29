@@ -15,6 +15,7 @@ import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalance
 import './Home.scss'
 
 const Home = () => {
+  console.log(document.documentElement.classList)
   return (
     <div className='home'>
       <SideBar />
