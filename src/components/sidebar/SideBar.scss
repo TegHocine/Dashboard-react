@@ -1,14 +1,58 @@
 @use '../../scss/' as *;
 
 .sidebar {
-  flex: 1;
-  max-width: max-content;
+  position: sticky;
+  top: 0;
+  width: max-content;
+  height: 100vh;
   padding-inline: 1.5rem;
-  background-color: inherit;
-  border-right: 0.5px solid $border;
-  min-height: 100vh;
+  background-color: $white;
   box-shadow: 0 1px 3px 0 rgb($main-color, 0.1),
     0 1px 2px -1px rgb($main-color, 0.1);
+
+  & * {
+    background-color: inherit;
+  }
+
+  &__button {
+    display: none;
+  }
+  @include tablet {
+    position: fixed;
+    z-index: 20;
+    transform: translateX(-175px);
+    transition: transform 1s ease;
+    &__button {
+      height: $nav-height;
+      position: fixed;
+      @include flex(center, center);
+      transform: translateX(175px);
+      font-size: 20px;
+      outline: none;
+      border: none;
+      background-color: transparent;
+      color: inherit;
+      transition: transform 1s ease;
+    }
+
+    &.show-sidebar {
+      transform: translateY(0);
+
+      .sidebar__button {
+        transform: translateX(125px);
+      }
+
+      .sidebar__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: transparent;
+        z-index: -1;
+      }
+    }
+  }
 
   &__top {
     height: $nav-height;
@@ -45,9 +89,9 @@
 
 .dark {
   .sidebar {
+    background-color: $main-color;
     box-shadow: 0 1px 3px 0 rgb($secondary-white, 0.1),
       0 1px 2px -1px rgb($secondary-white, 0.1);
-    border-color: rgb($gray, 0.08);
     &__top {
       border-color: rgb($gray, 0.1);
       .logo {

@@ -2,11 +2,41 @@
 
 .home {
   display: flex;
-  background-color: inherit;
   width: 100%;
+  background-color: inherit;
+  border-left: 0.5px solid $border;
 
   &__container {
-    flex: 1;
+    width: 100%;
+    flex-grow: 1;
+    .search-container {
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      &__search {
+        @include flex(center, none);
+        height: 2rem;
+        flex: 0.3;
+        position: relative;
+        max-width: 300px;
+        .search-input {
+          background-color: inherit;
+          color: inherit;
+          outline: none;
+          border: 0.5px solid $border;
+          padding-right: 2.5rem;
+          height: 100%;
+          width: 100%;
+          text-indent: 0.5rem;
+          border-radius: 5px;
+        }
+        .search-icon {
+          position: absolute;
+          color: inherit;
+          right: 0.5rem;
+        }
+      }
+    }
 
     .widget-container {
       display: grid;
@@ -28,6 +58,19 @@
     .table-container {
       margin-top: 1.5rem;
       margin-bottom: 1.5rem;
+    }
+  }
+}
+
+.dark {
+  .home {
+    border-color: rgb($gray, 0.2);
+    .search-container {
+      &__search {
+        .search-input {
+          border-color: rgb($gray, 0.2);
+        }
+      }
     }
   }
 }

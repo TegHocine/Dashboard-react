@@ -3,43 +3,14 @@
 .dark {
   .navbar {
     border-color: rgb($gray, 0.1);
-    &__search {
-      .search-input {
-        border-color: rgb($gray, 0.2);
-      }
-    }
   }
 }
 .navbar {
   background-color: inherit;
   height: $nav-height;
   border-bottom: 0.5px solid $border;
-  @include flex(center, space-between);
+  @include flex(center, flex-end);
   font-size: 80%;
-
-  &__search {
-    @include flex(center, none);
-    height: 2rem;
-    flex: 0.3;
-    position: relative;
-
-    .search-input {
-      background-color: inherit;
-      color: inherit;
-      outline: none;
-      border: 0.5px solid $border;
-      padding-right: 2.5rem;
-      height: 100%;
-      width: 100%;
-      text-indent: 0.5rem;
-      border-radius: 5px;
-    }
-    .search-icon {
-      position: absolute;
-      color: inherit;
-      right: 0.5rem;
-    }
-  }
 
   &__items {
     @include flex(center, center);

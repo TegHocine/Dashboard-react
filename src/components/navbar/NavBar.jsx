@@ -1,8 +1,6 @@
 import React from 'react'
 
 import DarkMode from '../darkmode/DarkMode'
-
-import SearchIcon from '@mui/icons-material/Search'
 import LanguageIcon from '@mui/icons-material/Language'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble'
@@ -12,10 +10,6 @@ import './NavBar.scss'
 const NavBar = () => {
   return (
     <div className='navbar section'>
-      <div className='navbar__search'>
-        <input type='search' placeholder='Search...' className='search-input' />
-        <SearchIcon className='search-icon' />
-      </div>
       <div className='navbar__items'>
         <div className='item-language item'>
           <LanguageIcon className='item-icon' /> English

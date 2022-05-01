@@ -6,12 +6,14 @@ import List from './pages/list/List'
 import Login from './pages/login/Login'
 import New from './pages/new/New'
 import Single from './pages/single/Single'
+import SideBar from './components/sidebar/SideBar'
 
 import './App.scss'
 
 const App = () => {
   return (
     <div className='App'>
+      <SideBar />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />

@@ -13,6 +13,10 @@
   &__title {
     color: $gray;
   }
+
+  & * {
+    @include flex(center, center);
+  }
 }
 
 .dark {

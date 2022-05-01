@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import DarkMode from '../darkmode/DarkMode'
@@ -16,8 +16,16 @@ import LogoutIcon from '@mui/icons-material/Logout'
 import './SideBar.scss'
 
 const SideBar = () => {
+  const [isVisible, setIsVisible] = useState(false)
+  const showSidebar = () => {
+    setIsVisible(!isVisible)
+  }
   return (
-    <div className='sidebar'>
+    <div className={`sidebar ${isVisible && 'show-sidebar'}`}>
+      <span className='sidebar__background' onClick={showSidebar}></span>
+      <button className={`sidebar__button`} onClick={showSidebar}>
+        X
+      </button>
       <div className='sidebar__top'>
         <Link to='/'>
           <span className='logo'>Admin</span>
