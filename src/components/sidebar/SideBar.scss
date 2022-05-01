@@ -1,37 +1,49 @@
 @use '../../scss/' as *;
 
+@include tablet {
+  .sidebar-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    z-index: -1;
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
+
 .sidebar {
   position: sticky;
   top: 0;
   width: max-content;
   height: 100vh;
-  padding-inline: 1.5rem;
   background-color: $white;
   box-shadow: 0 1px 3px 0 rgb($main-color, 0.1),
     0 1px 2px -1px rgb($main-color, 0.1);
 
-  & * {
-    background-color: inherit;
-  }
-
   &__button {
     display: none;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    height: $nav-height;
+    position: fixed;
+    @include flex(center, center);
   }
+
   @include tablet {
     position: fixed;
     z-index: 20;
     transform: translateX(-175px);
     transition: transform 1s ease;
     &__button {
-      height: $nav-height;
-      position: fixed;
-      @include flex(center, center);
-      transform: translateX(175px);
-      font-size: 20px;
-      outline: none;
-      border: none;
-      background-color: transparent;
-      color: inherit;
+      transform: translateX(190px);
       transition: transform 1s ease;
     }
 
@@ -39,17 +51,7 @@
       transform: translateY(0);
 
       .sidebar__button {
-        transform: translateX(125px);
-      }
-
-      .sidebar__background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: transparent;
-        z-index: -1;
+        transform: translateX(145px);
       }
     }
   }
@@ -58,7 +60,8 @@
     height: $nav-height;
     @include flex(center, center);
     border-bottom: 0.5px solid $border;
-    margin-inline: -1.5rem;
+    padding-inline: 1.5rem;
+    background-color: inherit;
 
     .logo {
       font-size: 2rem;
@@ -67,9 +70,12 @@
     }
   }
   &__center {
+    background-color: inherit;
+    padding-inline: 1.5rem;
+    height: 100%;
     .title {
       font-weight: 400;
-      margin-top: 1rem;
+      padding-top: 1rem;
     }
 
     .links {

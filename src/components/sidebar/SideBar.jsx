@@ -1,33 +1,33 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import DarkMode from '../darkmode/DarkMode'
+import { usefulItems, listsItems, userItems } from './SidebarItems'
 
+import DarkMode from '../darkmode/DarkMode'
 import DashboardIcon from '@mui/icons-material/Dashboard'
-import PersonIcon from '@mui/icons-material/Person'
-import StoreIcon from '@mui/icons-material/Store'
-import CreditCardIcon from '@mui/icons-material/CreditCard'
-import LocalShippingIcon from '@mui/icons-material/LocalShipping'
-import InsertChartIcon from '@mui/icons-material/InsertChart'
-import NotificationsIcon from '@mui/icons-material/Notifications'
-import AccountCircleIcon from '@mui/icons-material/AccountCircle'
-import LogoutIcon from '@mui/icons-material/Logout'
 
 import './SideBar.scss'
 
 const SideBar = () => {
   const [isVisible, setIsVisible] = useState(false)
+
   const showSidebar = () => {
     setIsVisible(!isVisible)
   }
+  const hideSidebar = () => {
+    setIsVisible(false)
+  }
   return (
     <div className={`sidebar ${isVisible && 'show-sidebar'}`}>
-      <span className='sidebar__background' onClick={showSidebar}></span>
+      <div
+        className={`sidebar-bg ${isVisible && 'active'}`}
+        onClick={hideSidebar}></div>
+      <div className='sidebar__wrapper'></div>
       <button className={`sidebar__button`} onClick={showSidebar}>
         X
       </button>
       <div className='sidebar__top'>
-        <Link to='/'>
+        <Link to='/' onClick={showSidebar}>
           <span className='logo'>Admin</span>
         </Link>
       </div>
@@ -35,53 +35,51 @@ const SideBar = () => {
         <ul>
           <h3 className='title'>Main</h3>
           <li>
-            <Link to='/' className='links'>
+            <Link to='/' className='links' onClick={showSidebar}>
               <DashboardIcon className='icons' /> Dashboard
             </Link>
           </li>
           <h3 className='title'>Lists</h3>
-          <li>
-            <Link to='/users' className='links'>
-              <PersonIcon className='icons' /> Users
-            </Link>
-          </li>
-          <li>
-            <Link to='/products' className='links'>
-              <StoreIcon className='icons' /> Products
-            </Link>
-          </li>
-          <li>
-            <Link to='#' className='links'>
-              <CreditCardIcon className='icons' /> Orders
-            </Link>
-          </li>
-          <li>
-            <Link to='#' className='links'>
-              <LocalShippingIcon className='icons' /> Delivery
-            </Link>
-          </li>
+
+          {listsItems.map((listsItem, i) => (
+            <li>
+              <Link
+                key={i}
+                to={listsItem.link}
+                className='links'
+                onClick={showSidebar}>
+                {listsItem.icon} {listsItem.title}
+              </Link>
+            </li>
+          ))}
+
           <h3 className='title'>Useful</h3>
-          <li>
-            <Link to='#' className='links'>
-              <InsertChartIcon className='icons' /> Stats
-            </Link>
-          </li>
-          <li>
-            <Link to='#' className='links'>
-              <NotificationsIcon className='icons' /> Notification
-            </Link>
-          </li>
+          {usefulItems.map((usefulItem, i) => (
+            <li>
+              <Link
+                key={i}
+                to={usefulItem.link}
+                className='links'
+                onClick={showSidebar}>
+                {usefulItem.icon} {usefulItem.title}
+              </Link>
+            </li>
+          ))}
+
           <h3 className='title'>User</h3>
-          <li>
-            <Link to='#' className='links'>
-              <AccountCircleIcon className='icons' /> Profile
-            </Link>
-          </li>
-          <li>
-            <Link to='#' className='links'>
-              <LogoutIcon className='icons' /> Logout
-            </Link>
-          </li>
+
+          {userItems.map((userItem, i) => (
+            <li>
+              <Link
+                key={i}
+                to={userItem.link}
+                className='links'
+                onClick={showSidebar}>
+                {userItem.icon} {userItem.title}
+              </Link>
+            </li>
+          ))}
+
           <h3 className='title'>Theme</h3>
           <li>
             <div className='links'>
