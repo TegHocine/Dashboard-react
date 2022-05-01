@@ -27,14 +27,34 @@
 
   &__button {
     display: none;
-    font-size: 20px;
     outline: none;
     border: none;
-    background-color: transparent;
+    background-color: inherit;
     color: inherit;
     height: $nav-height;
     position: fixed;
-    @include flex(center, center);
+
+    flex-direction: column;
+    padding: 0.2rem;
+    .buger {
+      padding: 1.5px;
+      margin-block: 2px;
+      width: 18px;
+      background-color: $purple;
+      transition: translateY(0) rotate(0);
+      transition: 1s ease;
+      opacity: 1;
+
+      &.bugerOne {
+        transform: translateY(7px) rotate(45deg);
+      }
+      &.bugerTwo {
+        opacity: 0;
+      }
+      &.bugerThree {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+    }
   }
 
   @include tablet {
@@ -43,8 +63,9 @@
     transform: translateX(-175px);
     transition: transform 1s ease;
     &__button {
-      transform: translateX(190px);
+      transform: translateX(195px);
       transition: transform 1s ease;
+      @include flex(center, center);
     }
 
     &.show-sidebar {
@@ -98,6 +119,12 @@
     background-color: $main-color;
     box-shadow: 0 1px 3px 0 rgb($secondary-white, 0.1),
       0 1px 2px -1px rgb($secondary-white, 0.1);
+    &__button {
+      .buger {
+        background-color: $secondary-white;
+      }
+    }
+
     &__top {
       border-color: rgb($gray, 0.1);
       .logo {

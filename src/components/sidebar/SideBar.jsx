@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { usefulItems, listsItems, userItems } from './SidebarItems'
-
 import DarkMode from '../darkmode/DarkMode'
+
 import DashboardIcon from '@mui/icons-material/Dashboard'
 
 import './SideBar.scss'
@@ -22,9 +22,10 @@ const SideBar = () => {
       <div
         className={`sidebar-bg ${isVisible && 'active'}`}
         onClick={hideSidebar}></div>
-      <div className='sidebar__wrapper'></div>
       <button className={`sidebar__button`} onClick={showSidebar}>
-        X
+        <span className={`buger ${isVisible && ' bugerOne'}`}></span>
+        <span className={`buger ${isVisible && ' bugerTwo'}`}></span>
+        <span className={`buger ${isVisible && ' bugerThree'}`}></span>
       </button>
       <div className='sidebar__top'>
         <Link to='/' onClick={showSidebar}>
