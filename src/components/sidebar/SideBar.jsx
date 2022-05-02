@@ -19,9 +19,9 @@ const SideBar = () => {
   }
   return (
     <div className={`sidebar ${isVisible && 'show-sidebar'}`}>
-      <div
+      <button
         className={`sidebar-bg ${isVisible && 'active'}`}
-        onClick={hideSidebar}></div>
+        onClick={hideSidebar}></button>
 
       <div className='sidebar__top'>
         <Link to='/' onClick={showSidebar}>
