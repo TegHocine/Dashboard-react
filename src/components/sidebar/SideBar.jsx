@@ -22,15 +22,18 @@ const SideBar = () => {
       <div
         className={`sidebar-bg ${isVisible && 'active'}`}
         onClick={hideSidebar}></div>
-      <button className={`sidebar__button`} onClick={showSidebar}>
-        <span className={`buger ${isVisible && ' bugerOne'}`}></span>
-        <span className={`buger ${isVisible && ' bugerTwo'}`}></span>
-        <span className={`buger ${isVisible && ' bugerThree'}`}></span>
-      </button>
+
       <div className='sidebar__top'>
         <Link to='/' onClick={showSidebar}>
           <span className='logo'>Admin</span>
         </Link>
+        <button
+          className={`button ${isVisible && ' active'}`}
+          onClick={showSidebar}>
+          <span className={`buger ${isVisible && ' bugerOne'}`}></span>
+          <span className={`buger ${isVisible && ' bugerTwo'}`}></span>
+          <span className={`buger ${isVisible && ' bugerThree'}`}></span>
+        </button>
       </div>
       <div className='sidebar__center'>
         <ul>

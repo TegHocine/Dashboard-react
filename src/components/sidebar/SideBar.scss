@@ -25,65 +25,71 @@
   box-shadow: 0 1px 3px 0 rgb($main-color, 0.1),
     0 1px 2px -1px rgb($main-color, 0.1);
 
-  &__button {
-    display: none;
-    outline: none;
-    border: none;
-    background-color: inherit;
-    color: inherit;
-    height: $nav-height;
-    position: fixed;
-
-    flex-direction: column;
-    padding: 0.2rem;
-    .buger {
-      padding: 1.5px;
-      margin-block: 2px;
-      width: 18px;
-      background-color: $purple;
-      transition: translateY(0) rotate(0);
-      transition: 1s ease;
-      opacity: 1;
-
-      &.bugerOne {
-        transform: translateY(7px) rotate(45deg);
-      }
-      &.bugerTwo {
-        opacity: 0;
-      }
-      &.bugerThree {
-        transform: translateY(-7px) rotate(-45deg);
-      }
-    }
-  }
-
   @include tablet {
     position: fixed;
     z-index: 20;
-    transform: translateX(-175px);
-    transition: transform 1s ease;
-    &__button {
-      transform: translateX(195px);
-      transition: transform 1s ease;
-      @include flex(center, center);
-    }
+    left: -200px;
+    transition: 1s ease;
 
     &.show-sidebar {
-      transform: translateY(0);
+      left: 0;
 
       .sidebar__button {
-        transform: translateX(145px);
+        left: 8.5rem;
       }
     }
   }
 
   &__top {
+    position: relative;
     height: $nav-height;
     @include flex(center, center);
     border-bottom: 0.5px solid $border;
     padding-inline: 1.5rem;
     background-color: inherit;
 
+    .button {
+      display: none;
+      outline: none;
+      border: none;
+      background-color: transparent;
+      color: inherit;
+      height: $nav-height;
+      position: absolute;
+      flex-direction: column;
+      padding: 0.2rem;
+      transition: 1s ease;
+      .buger {
+        padding: 1.5px;
+        margin-block: 2px;
+        width: 18px;
+        background-color: $purple;
+        transition: translateY(0) rotate(0);
+        transition: 1s ease;
+        opacity: 1;
+
+        &.bugerOne {
+          transform: translateY(7px) rotate(45deg);
+        }
+        &.bugerTwo {
+          opacity: 0;
+        }
+        &.bugerThree {
+          transform: translateY(-7px) rotate(-45deg);
+        }
+      }
+    }
+
+    @include tablet {
+      .button {
+        right: -4.35rem;
+        @include flex(center, center);
+        &.active {
+          right: 0.5rem;
+          left: unset;
+        }
+      }
+    }
     .logo {
       font-size: 2rem;
       font-weight: bold;
@@ -119,14 +125,14 @@
     background-color: $main-color;
     box-shadow: 0 1px 3px 0 rgb($secondary-white, 0.1),
       0 1px 2px -1px rgb($secondary-white, 0.1);
-    &__button {
-      .buger {
-        background-color: $secondary-white;
-      }
-    }
 
     &__top {
       border-color: rgb($gray, 0.1);
+      .button {
+        .buger {
+          background-color: $secondary-white;
+        }
+      }
       .logo {
         color: $secondary-white;
       }
