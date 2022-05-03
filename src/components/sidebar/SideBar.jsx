@@ -46,12 +46,8 @@ const SideBar = () => {
           <h3 className='title'>Lists</h3>
 
           {listsItems.map((listsItem, i) => (
-            <li>
-              <Link
-                key={i}
-                to={listsItem.link}
-                className='links'
-                onClick={showSidebar}>
+            <li key={i}>
+              <Link to={listsItem.link} className='links' onClick={showSidebar}>
                 {listsItem.icon} {listsItem.title}
               </Link>
             </li>
@@ -59,9 +55,8 @@ const SideBar = () => {
 
           <h3 className='title'>Useful</h3>
           {usefulItems.map((usefulItem, i) => (
-            <li>
+            <li key={i}>
               <Link
-                key={i}
                 to={usefulItem.link}
                 className='links'
                 onClick={showSidebar}>
@@ -73,12 +68,8 @@ const SideBar = () => {
           <h3 className='title'>User</h3>
 
           {userItems.map((userItem, i) => (
-            <li>
-              <Link
-                key={i}
-                to={userItem.link}
-                className='links'
-                onClick={showSidebar}>
+            <li key={i}>
+              <Link to={userItem.link} className='links' onClick={showSidebar}>
                 {userItem.icon} {userItem.title}
               </Link>
             </li>

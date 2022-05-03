@@ -1,31 +1,14 @@
-import React, { useState, useLayoutEffect } from 'react'
+import React, { useContext } from 'react'
 
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import Brightness7Icon from '@mui/icons-material/Brightness7'
 
+import { darkmodeContext } from '../../context/ThemeContext'
+
 import './DarkMode.scss'
 
 const DarkMode = ({ type }) => {
-  const [isDark, setIsDark] = useState(() => localStorage.theme === 'dark')
-
-  useLayoutEffect(() => {
-    const html = document.documentElement.classList
-    const prevTheme = isDark ? 'light' : 'dark'
-    html.remove(prevTheme)
-    const nextTheme = isDark ? 'dark' : 'light'
-    html.add(nextTheme)
-    localStorage.setItem('theme', nextTheme)
-  }, [isDark])
-
-  const toggle = () => {
-    setIsDark(!isDark)
-  }
-  const light = () => {
-    setIsDark(false)
-  }
-  const dark = () => {
-    setIsDark(true)
-  }
+  const { isDark, toggle, light, dark } = useContext(darkmodeContext)
 
   return (
     <div className='darkmod'>

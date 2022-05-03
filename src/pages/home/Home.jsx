@@ -15,7 +15,6 @@ import SearchIcon from '@mui/icons-material/Search'
 import './Home.scss'
 
 const Home = () => {
-  console.log(document.documentElement.classList)
   return (
     <div className='home'>
       <div className='home__container'>
