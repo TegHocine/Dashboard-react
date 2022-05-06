@@ -10,11 +10,16 @@
     padding-block: 0.05rem;
 
     .toggle-icon {
-      height: 100%;
-      @include flex(center, flex-start);
+      height: 95%;
+      @include flex(center, unset);
+      position: absolute;
+      transition: 600ms ease;
+      transform: translateX(0);
 
       &.dark {
-        @include flex(center, flex-end);
+        @include flex(center, unset);
+        position: absolute;
+        transform: translateX(65%);
       }
       .icon {
         height: 100%;
