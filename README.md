@@ -1,5 +1,4 @@
 
-#link: https://stunning-babka-8d3ead.netlify.app/
 
 ![darkdesk](https://user-images.githubusercontent.com/61586802/166170049-541e90b6-1e97-4fd7-82ba-ca42758b7230.png)
 
